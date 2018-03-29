@@ -17,7 +17,8 @@ class ZhihuController extends Controller
 	}
 
     public function index(){
-    	$users = DB::select('select * from live_info');
+    	$users = DB::select('select * from live_info limit 0,10');
+    	var_dump(debug_backtrace());
     	return view('zhihu/index', $users);
     }
 }

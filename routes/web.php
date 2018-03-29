@@ -11,24 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('users', function () {
-	echo "adsfasdfasdfda";
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('zhihu', 'Zhihu\ZhihuController@index');
+
+Route::get('/','Zhihu\ZhihuController@index');
+
+// Route::get('users', function () {
+// 	echo "adsfasdfasdfda";
+// });
+
+// Route::get('zhihu', 'Zhihu\ZhihuController@index');
 
 // Route::get('/zhihu', function () {
 //     return view('zhihu.index');
 // });
 
 
-Route::get('home', function(){
-	return View::make('users');
-});
-Route::resource('static', 'StaticController');
+// Route::get('home', function(){
+// 	return View::make('users');
+// });
+// Route::resource('static', 'StaticController');
 
 // Route::get('user/{age}', 'UserController@show');
 
