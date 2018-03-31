@@ -18,24 +18,24 @@ class ZhihuController extends Controller
 
     public function index(){
     	// $data = [];
-    	// $users = DB::select('select * from live_info limit 0,10');
+    	$users = DB::select('select * from live_info limit 0,2');
+
+        var_dump($users);
 
     	// $data["user"] = $users;
     	// $data["title"] = "知乎live";
     	// return view('zhihu/child', $data);
     
-        $name = 'helloiu';
-        $data = ['sss','zzz'];
-        // $students = Student::get();
-        $students = [
-            'a'=>['created_at'=>'12312312'],
-            'b'=>['created_at'=>'123'],
-            'c'=>['created_at'=>'321']
-        ];
+        // $name = 'helloiu';
+        // $data = ['sss'=>'111','zzz'=>'222'];
+        // // $students = Student::get();
+        // $students = [
+        //     'a'=>['created_at'=>'12312312'],
+        //     'b'=>['created_at'=>'123'],
+        //     'c'=>['created_at'=>'321']
+        // ];
         return view('zhihu.index',[
-            'name' => $name,
-            'data' => $data,
-            'students' => $students,
+            'data' => $users,
         ])->with('test',"kangchao");
     }
 }

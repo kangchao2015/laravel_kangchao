@@ -25,5 +25,10 @@
 @show
     <!--data end-->
 
+@section('test')
+    <!--test-->
+@show
+    <!--test end-->
+
 </body>
 </html>

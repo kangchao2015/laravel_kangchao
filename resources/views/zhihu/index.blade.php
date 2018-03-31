@@ -112,3 +112,14 @@
  </table>
 </div>
 @endsection
+
+
+
+@section('test')
+
+  @foreach ($data as $s)
+      <p>此用户为 {{$s['created_at']}}</p>
+  @endforeach
+
+
+@endsection
