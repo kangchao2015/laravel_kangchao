@@ -1,11 +1,13 @@
-@extends('zhihu.layout.layout')
+<!DOCTYPE html>
+<html>
+<head>
+	<title>123123</title>
+	<link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap.css') }}">
+	<script type="text/javascript" src="{{ URL::asset('js/jquery-3.3.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('bootstrap/js/bootstrap.min.js') }}"></script>
+</head>
+<body>
 
-@section('title', '知乎live数据检索')
-
-
-
-@section('menu')
-@parent
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -19,50 +21,38 @@
     </div>
     </div>
 </nav>
-@endsection
 
-
-@section('form')
-@parent
 <div>
-    <form class="form-inline" role="form">
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="live名称">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="原价格">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="分类">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="评分">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="报名人数">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="开始时间">
-      </div>
-    </form>
+	<form class="form-inline" role="form">
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	  <div class="form-group">
+	    <label class="sr-only" for="name">名称</label>
+	    <input type="text" class="form-control" id="name" placeholder="live名称">
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="name">名称</label>
+	    <input type="text" class="form-control" id="name" placeholder="原价格">
+	  </div>
+  	  <div class="form-group">
+	    <label class="sr-only" for="name">名称</label>
+	    <input type="text" class="form-control" id="name" placeholder="分类">
+	  </div>
+  	  <div class="form-group">
+	    <label class="sr-only" for="name">名称</label>
+	    <input type="text" class="form-control" id="name" placeholder="评分">
+	  </div>
+  	  <div class="form-group">
+	    <label class="sr-only" for="name">名称</label>
+	    <input type="text" class="form-control" id="name" placeholder="报名人数">
+	  </div>
+  	  <div class="form-group">
+	    <label class="sr-only" for="name">名称</label>
+	    <input type="text" class="form-control" id="name" placeholder="开始时间">
+	  </div>
+	</form>
 </div>
 <br>
-@endsection
 
-
-
-
-
-
-@section('data')
-@parent
 <div class="table-responsive">          
  <table class="table table-striped table-bordered">
    <thead>
@@ -111,4 +101,6 @@
    </tbody>
  </table>
 </div>
-@endsection
+
+</body>
+</html>

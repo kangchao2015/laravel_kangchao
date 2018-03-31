@@ -1,0 +1,1 @@
+<p>我是common子视图include {{ $message }}<p>
