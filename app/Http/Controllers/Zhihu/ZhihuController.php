@@ -13,14 +13,21 @@ class ZhihuController extends Controller
 	public function __construct(){
 
 		//放置中间件
+        // DB::setFetchMode(PDO::FETCH_ASSOC);
 
 	}
 
-    public function index(){
-    	// $data = [];
-    	$users = DB::select('select * from live_info limit 0,2');
+    public function objectToArray($object) {
+        return json_decode(json_encode($object), true);
+    }
 
-        var_dump($users);
+    public function index(){
+    	$data      = [];
+    	$data_all  = DB::select('select * from live_info limit 0,2');
+        $data_all  = DB::table("live_info")->paginate(15);
+
+        $data = $this->objectToArray($data_all);
+
 
     	// $data["user"] = $users;
     	// $data["title"] = "知乎live";
@@ -35,7 +42,7 @@ class ZhihuController extends Controller
         //     'c'=>['created_at'=>'321']
         // ];
         return view('zhihu.index',[
-            'data' => $users,
+            'data' => $data,
         ])->with('test',"kangchao");
     }
 }

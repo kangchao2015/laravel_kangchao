@@ -25,6 +25,13 @@
 @show
     <!--data end-->
 
+
+@section('page')
+    <!--paganition-->
+
+@show
+    <!--paganition end-->
+
 @section('test')
     <!--test-->
 @show
