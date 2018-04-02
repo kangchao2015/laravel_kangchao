@@ -1,6 +1,6 @@
 @extends('zhihu.layout.layout')
 
-@section('title', '知乎live数据检索')
+@section('title', 'live数据检索')
 
 
 
@@ -9,12 +9,12 @@
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">菜鸟教程</a>
+        <a class="navbar-brand" href="#">你的剑就是我的剑</a>
     </div>
     <div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">iOS</a></li>
-            <li><a href="#">SVN</a></li>
+            <li class="active"><a href="#">LIVE</a></li>
+            <li><a href="#">私家课</a></li>
         </ul>
     </div>
     </div>
@@ -42,6 +42,11 @@
               </div>
               <div class="form-group col-md-4">
                 <label class="sr-only" for="name">名称</label>
+              <input type="text" class="form-control" id="name" placeholder="live作者"  style = "width:70%">
+             
+              </div>
+              <div class="form-group col-md-4">
+                <label class="sr-only" for="name">名称</label>
              <select class="form-control" style = "width:70%">
               <option>请选择评原价格范围</option>
               <option>0 - 9.9</option>
@@ -51,15 +56,6 @@
               <option>80 - 149.9</option>
               <option>150 - 299.9</option>
               <option>300 - 999.9</option>
-            </select>
-              </div>
-              <div class="form-group col-md-4">
-                <label class="sr-only" for="name">名称</label>
-            <select class="form-control" style = "width:70%">
-              <option>请选择评分范围</option>
-              <option>4.2 - 4.5</option>
-              <option>5.51 - 4.8</option>
-              <option>4.81 - 5</option>
             </select>
               </div>
 
@@ -110,10 +106,9 @@
 
 
 
-
 @section('data')
 @parent
-<div class="table-responsive">          
+<div class="table-responsive" style = "margin: 10px">          
  <table class="table table-striped table-bordered">
    <thead>
      <tr>
@@ -136,13 +131,13 @@
          <td> {{ $v['id'] }}</td>
          <td>{{ $v['subject'] }}</td>
          <td>{{ $v['speaker_member_name'] }}</td>
-         <td>{{$v['seats_taken']}}</td>
+         <td>{{$v['seats_taken']}}人</td>
          <td>{{ date('Y/m/d H:i',$v['starts_at'])}} </td>
          <td>{{ $v['tags_0_name'] }}</td>
          <td>{{ $v['feedback_score'] }}</td>
          <td>￥{{ $v['fee_original_price']/100 }}</td>
          <td>
-          <button type="button" class="btn btn-primary">详情</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">详情</button>
           <button type="button" class="btn btn-success">选择</button></td>
        </tr>
     @endforeach

@@ -7,8 +7,5 @@
     <center><h1>{{ $slot }}</h1></center>
     <center><h1><?php echo $abc ?></h1></center>
 
-
-
-    <?php  echo $aaaaa ?>
     <br>
 </div>
