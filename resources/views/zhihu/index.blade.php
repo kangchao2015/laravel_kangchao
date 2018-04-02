@@ -125,6 +125,7 @@
        <th>分类</th>
        <th>评分</th>
        <th>官方价格</th>
+       <th>操作</th>
      </tr>
    </thead>
    <tbody>
@@ -140,6 +141,9 @@
          <td>{{ $v['tags_0_name'] }}</td>
          <td>{{ $v['feedback_score'] }}</td>
          <td>￥{{ $v['fee_original_price']/100 }}</td>
+         <td>
+          <button type="button" class="btn btn-primary">详情</button>
+          <button type="button" class="btn btn-success">选择</button></td>
        </tr>
     @endforeach
 
