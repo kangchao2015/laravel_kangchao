@@ -24,38 +24,88 @@
 
 @section('form')
 @parent
-<div>
-    <form class="form-inline" role="form">
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="live名称">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="原价格">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="分类">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="评分">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="报名人数">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="name">名称</label>
-        <input type="text" class="form-control" id="name" placeholder="开始时间">
-      </div>
-    </form>
+
+
+<div class="panel panel-primary" style = "margin: 20px">
+    <div class="panel-heading">
+        <h3 class="panel-title">请筛选你需要的内容</h3>
+    </div>
+    <div class="panel-body">
+    <div>
+        <form class="form-inline" role="form">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="row">
+
+              <div class="form-group col-md-4">
+                <label class="sr-only" for="name">名称</label>
+                <input type="text" class="form-control" id="name" placeholder="live名称"  style = "width:70%">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="sr-only" for="name">名称</label>
+             <select class="form-control" style = "width:70%">
+              <option>请选择评原价格范围</option>
+              <option>0 - 9.9</option>
+              <option>10 - 19.9</option>
+              <option>20 - 39.9</option>
+              <option>40 - 79.9</option>
+              <option>80 - 149.9</option>
+              <option>150 - 299.9</option>
+              <option>300 - 999.9</option>
+            </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label class="sr-only" for="name">名称</label>
+            <select class="form-control" style = "width:70%">
+              <option>请选择评分范围</option>
+              <option>4.2 - 4.5</option>
+              <option>5.51 - 4.8</option>
+              <option>4.81 - 5</option>
+            </select>
+              </div>
+
+          </div>
+          <br>
+          <div class="row">
+          <div class="form-group col-md-4">
+            <label class="sr-only" for="name">名称</label>
+            <select class="form-control" style = "width:70%">
+              <option>请选择评分范围</option>
+              <option>4.2 - 4.5</option>
+              <option>5.51 - 4.8</option>
+              <option>4.81 - 5</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label class="sr-only" for="name">名称</label>            
+            <select class="form-control" style = "width:70%">
+              <option>请选择报名人数范围</option>
+              <option>0-100</option>
+              <option>100-500</option>
+              <option>500-1000</option>
+              <option>1000-5000</option>
+              <option>5000-10000</option>
+              <option>10000以上</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label class="sr-only" for="name">名称</label>
+            <select class="form-control" style = "width:70%">
+              <option>请选择开始时间范围</option>
+              <option>2016/1/1 - 2016/12/31</option>
+              <option>2017/1/1 - 2017/06/30</option>
+              <option>2017/7/1 - 2017/12/31</option>
+              <option>2018/1/1 - 今天</option>
+            </select>
+          </div>
+        </div>
+        </form>
+    </div>
+    </div>
 </div>
 <br>
-@endsection
 
+
+@endsection
 
 
 
@@ -101,7 +151,7 @@
 
 
 @section('page')
-
+@parent
 <ul class="pagination">
 
     @if($data['current_page'] != 1)
@@ -127,7 +177,7 @@
 
 
 @endsection
-
+{{--
 
 
 @section('test')
@@ -140,3 +190,7 @@
   @endforeach
 
 @endsection
+
+
+
+--}}
