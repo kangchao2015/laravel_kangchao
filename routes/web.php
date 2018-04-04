@@ -17,6 +17,7 @@
 
 
 Route::get('/','Zhihu\ZhihuController@index');
+Route::get('/t','Zhihu\ZhihuController@test');
 Route::get('/test','UserController@show');
 
 // Route::get('users', function () {

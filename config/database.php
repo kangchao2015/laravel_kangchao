@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysql_deamon'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+        'mysql_deamon' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
