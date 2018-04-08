@@ -123,7 +123,7 @@
        <th>操作</th>
      </tr>
    </thead>
-   <tbody>
+   <tbody  id = "action">
 
     {{-- 此注释将不会出现在渲染后的 HTML --}}
     @foreach ($data['data'] as $k=>$v)
@@ -137,7 +137,7 @@
          <td>{{ $v['feedback_score'] }}</td>
          <td>￥{{ $v['fee_original_price']/100 }}</td>
          <td>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">详情</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="showdetail('{{ $v['id'] }}')">详情</button>
           <button type="button" class="btn btn-success">选择</button></td>
        </tr>
     @endforeach
@@ -173,6 +173,47 @@
     <li><a>      .       </a></li>
     <li><a>当前{{$data['from']}}--{{$data['to']}} / 总计{{$data['total']}}</a></li>
 </ul>
+
+<script type="text/javascript">
+  var show_detail = new Vue({
+    el: '#action',
+    // 在 `methods` 对象中定义方法
+    methods: {
+      showdetail:function (id) {
+        url = "{{ route('showdetail') }}";
+        url = url + "/" + id;
+        axios.get(url)
+          .then(function (response) {
+            if(response.data.code == 200){
+              data = response.data.data;
+              console.log(data);
+              $("#myModalLabel").text(data.subject);
+              $("#c1").html(data.outline);
+              $("#c2").text(data.description);
+              $("#c3").text(data.speaker_description);
+              $("#c4").text(data.speaker_member_headline);
+            }else{
+
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+       }
+      }
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 @endsection

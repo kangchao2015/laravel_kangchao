@@ -16,6 +16,6 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+Route::get('/live/{id?}','Zhihu\ZhihuController@api_get_specific_live')->name("showdetail");

@@ -18,11 +18,13 @@
 
 Route::get('/','Zhihu\ZhihuController@index');
 Route::get('/t','Zhihu\ZhihuController@test');
-Route::get('/test','UserController@show');
+Route::get('/test1','test\testController@test1');
+Route::get('/test2','test\testController@test2');
+Route::get('/test3','test\testController@test3');
+Route::get('/test4','test\testController@test4');
+Route::get('/test5','test\testController@test5');
+Route::get('/test6','test\testController@test6');
 
-// Route::get('users', function () {
-// 	echo "adsfasdfasdfda";
-// });
 
 // Route::get('zhihu', 'Zhihu\ZhihuController@index');
 

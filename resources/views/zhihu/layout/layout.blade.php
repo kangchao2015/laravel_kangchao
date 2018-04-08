@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap.css') }}">
     <script type="text/javascript" src="{{ URL::asset('js/jquery-3.3.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('bootstrap/js/vue.min.js') }}"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
