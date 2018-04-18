@@ -279,6 +279,7 @@ class ComposerStaticInitd7687699ffffd30ee9704f2a050f5c1f
     );
 
     public static $classMap = array (
+        'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -290,6 +291,7 @@ class ComposerStaticInitd7687699ffffd30ee9704f2a050f5c1f
         'App\\Http\\Controllers\\StaticController' => __DIR__ . '/../..' . '/app/Http/Controllers/StaticController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\Zhihu\\ZhihuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Zhihu/ZhihuController.php',
+        'App\\Http\\Controllers\\test\\testController' => __DIR__ . '/../..' . '/app/Http/Controllers/test/testController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\CheckAge' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAge.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -301,6 +303,7 @@ class ComposerStaticInitd7687699ffffd30ee9704f2a050f5c1f
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\RiakServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RiakServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\live_info' => __DIR__ . '/../..' . '/app/live_info.php',
@@ -310,6 +313,7 @@ class ComposerStaticInitd7687699ffffd30ee9704f2a050f5c1f
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_12_111018_create_articles_table.php',
         'CreateLiveInfoTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_223957_create_live_info_table.php',
         'CreateLiveInfosTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_04_140539_create_live_infos_table.php',
         'CreateLiveTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_223632_create_live_table.php',

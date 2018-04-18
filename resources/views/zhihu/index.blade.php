@@ -33,67 +33,21 @@
     <div class="panel-body">
     <div>
         <form class="form-inline" role="form">
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <div class="row">
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">live名称</span>
+              <input type="text" class="form-control" placeholder="liveName" aria-describedby="sizing-addon3">
+            </div>            
 
-              <div class="form-group col-md-4">
-                <label class="sr-only" for="name">名称</label>
-                <input type="text" class="form-control" id="name" placeholder="live名称"  style = "width:70%">
-              </div>
-              <div class="form-group col-md-4">
-                <label class="sr-only" for="name">名称</label>
-              <input type="text" class="form-control" id="name" placeholder="live作者"  style = "width:70%">
-             
-              </div>
-              <div class="form-group col-md-4">
-                <label class="sr-only" for="name">名称</label>
-             <select class="form-control" style = "width:70%">
-              <option>请选择评原价格范围</option>
-              <option>0 - 9.9</option>
-              <option>10 - 19.9</option>
-              <option>20 - 39.9</option>
-              <option>40 - 79.9</option>
-              <option>80 - 149.9</option>
-              <option>150 - 299.9</option>
-              <option>300 - 999.9</option>
-            </select>
-              </div>
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">live作者</span>
+              <input type="text" class="form-control" placeholder="liveAuthor" aria-describedby="sizing-addon3">
+            </div>
 
-          </div>
-          <br>
-          <div class="row">
-          <div class="form-group col-md-4">
-            <label class="sr-only" for="name">名称</label>
-            <select class="form-control" style = "width:70%">
-              <option>请选择评分范围</option>
-              <option>4.2 - 4.5</option>
-              <option>5.51 - 4.8</option>
-              <option>4.81 - 5</option>
-            </select>
-          </div>
-          <div class="form-group col-md-4">
-            <label class="sr-only" for="name">名称</label>            
-            <select class="form-control" style = "width:70%">
-              <option>请选择报名人数范围</option>
-              <option>0-100</option>
-              <option>100-500</option>
-              <option>500-1000</option>
-              <option>1000-5000</option>
-              <option>5000-10000</option>
-              <option>10000以上</option>
-            </select>
-          </div>
-          <div class="form-group col-md-4">
-            <label class="sr-only" for="name">名称</label>
-            <select class="form-control" style = "width:70%">
-              <option>请选择开始时间范围</option>
-              <option>2016/1/1 - 2016/12/31</option>
-              <option>2017/1/1 - 2017/06/30</option>
-              <option>2017/7/1 - 2017/12/31</option>
-              <option>2018/1/1 - 今天</option>
-            </select>
-          </div>
-        </div>
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">live分类</span>
+              <input type="text" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
+            </div>
+
         </form>
     </div>
     </div>

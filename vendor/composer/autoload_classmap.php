@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Article' => $baseDir . '/app/Article.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -17,6 +18,7 @@ return array(
     'App\\Http\\Controllers\\StaticController' => $baseDir . '/app/Http/Controllers/StaticController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\Zhihu\\ZhihuController' => $baseDir . '/app/Http/Controllers/Zhihu/ZhihuController.php',
+    'App\\Http\\Controllers\\test\\testController' => $baseDir . '/app/Http/Controllers/test/testController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\CheckAge' => $baseDir . '/app/Http/Middleware/CheckAge.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -28,6 +30,7 @@ return array(
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
+    'App\\Providers\\RiakServiceProvider' => $baseDir . '/app/Providers/RiakServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\live_info' => $baseDir . '/app/live_info.php',
@@ -37,6 +40,7 @@ return array(
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
+    'CreateArticlesTable' => $baseDir . '/database/migrations/2018_04_12_111018_create_articles_table.php',
     'CreateLiveInfoTable' => $baseDir . '/database/migrations/2018_04_01_223957_create_live_info_table.php',
     'CreateLiveInfosTable' => $baseDir . '/database/migrations/2018_04_04_140539_create_live_infos_table.php',
     'CreateLiveTable' => $baseDir . '/database/migrations/2018_04_01_223632_create_live_table.php',

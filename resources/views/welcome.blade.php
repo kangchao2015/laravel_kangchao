@@ -79,7 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{$name}}
+                    {{$age }}
                 </div>
 
                 <div class="links">
