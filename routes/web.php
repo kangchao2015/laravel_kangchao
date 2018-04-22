@@ -45,6 +45,21 @@ Route::get('/test9','test\testController@test9');
 Route::get('/test10','test\testController@test10');
 Route::get('/test11','test\testController@test11');
 Route::get('/test12','test\testController@test12');
+Route::get('/test13','test\testController@test13');
+Route::get('/test14','test\testController@test14');
+
+Route::group(["middleware"=>["web"]],function(){
+    Route::get('/test15',[
+        'as'    =>  'test155',
+        'uses'  =>  'test\testController@test15'
+    ]);
+    Route::get('/test16','test\testController@test16');
+});
+
+
+
+Route::get('/test17','test\testController@test17');
+Route::get('/test18','test\testController@test18');
 
 //多请求路由 响应指定类型的路由
 Route::match(['get','post'], 'multy', function(){

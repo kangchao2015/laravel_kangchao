@@ -82,10 +82,10 @@
     {{-- 此注释将不会出现在渲染后的 HTML --}}
     @foreach ($data['data'] as $k=>$v)
        <tr>
-         <td> {{ $v['id'] }}</td>
+         <td>{{ $v['id'] }}</td>
          <td>{{ $v['subject'] }}</td>
          <td>{{ $v['speaker_member_name'] }}</td>
-         <td>{{$v['seats_taken']}}人</td>
+         <td>{{ $v['seats_taken']}}人</td>
          <td>{{ date('Y/m/d H:i',$v['starts_at'])}} </td>
          <td>{{ $v['tags_0_name'] }}</td>
          <td>{{ $v['feedback_score'] }}</td>

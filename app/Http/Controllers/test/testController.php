@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\live_info;
 use App\live_infos;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 
 class testController extends Controller
@@ -23,7 +25,7 @@ class testController extends Controller
             return $d->subject;
         });
 
-        // var_dump($data);
+        // var_dump($data);s
         foreach($data as $k=>$v){
             echo $k."==>".$v;
             echo "<br>";
@@ -329,10 +331,129 @@ class testController extends Controller
      * 模板
      */
     public function test12(){
+
+        $lives = live_infos::limit(0)->get();
+
         return view('test.index',[
             'data' => 123,
+            'lives' => $lives
         ])->with('test',"kangchao");
     }
+
+
+    /**
+        url test
+    */
+    public function test13(){
+
+        return view("test.test13");
+    }
+
+
+    /**
+        request
+    */
+    public function test14(Request $req){
+
+        //获取
+        $res =  $req->input("name", "zzzz");            //获取指定的键的值
+        $res =  $req->has("name1");                             //判断指定的键是否存在
+        $res =  $req->all();                                        //获取所有的参数
+
+        //判断类型
+        $res =  $req->method();                                       //获取请求类型
+        $res =  $req->isMethod("GET");                        //判断请求类型是否是指定的类型
+        $res =  $req->ajax();                                          //判断是否为ajax请求
+        $res =  $req->is("test123*");                                  //判断是否为指定的请求路径
+
+        $res =  $req->url();                                           //获取请求的url
+        dd($res);
+        return view("test.request");
+    }
+
+    /**
+     * session
+     */
+    public function test15(Request $req){
+
+        return Session::get("aaa","nonde");
+//        1.HTTP的request方法
+//        $req->session()->put("aa","bb");
+//        echo $req->session()->get("aa");
+//        dd($req->session());
+
+
+//        2.session 辅助函数
+//        session()->put("cc","dd");
+//        echo session()->get("cc");
+
+//        3.通过session类的静态方法
+//        Session::put("aaa","bbb");
+//        echo Session::get("aaa1","default");
+
+//        4.session的数组操作
+//        Session::push(1,"b");
+//        Session::push(1,"d");
+//        $res = Session::get(1);
+
+//        5.取出session并删除
+//        $res = Session::pull(1,"asfdsafads");
+//        dd($res);
+
+//        6.判断session中的某个值是否存在
+//        if(Session::has("aaaaa")){
+//            echo 123;
+//        }else{
+//            echo 999;
+//        }
+
+
+//        7.删除指定的几个键值
+//        Session::forget('aaa');
+
+//        8.清空session
+//        Session::flush();
+
+//        9.暂存session数据
+//        Session::flash('aaa','bbbb');
+    }
+
+    /**
+     * @请求之respose();
+     */
+    public function test16(Request $req){
+
+//        $data = [
+//            'errCode'   =>  0,
+//            'errMsg'    =>  "Success",
+//            'data'      =>  [
+//                'name'      =>  'kangchao',
+//                'gender'    =>  'male'
+//            ]
+//        ];
+//
+//        return Response::json($data);
+//        return response::json($data);
+
+
+        /**
+         * 重定向
+         * 方法一  带过去的数据可以用   Session::get(); 方法来获取到数据  相当于 flash方法 只有一次有效
+         * 方法二  action
+         * 方法三  rroute 用路由别名重定向
+         * 方法四  back(); 返回上一个页面
+         */
+//        return redirect("test15")->with('aaa','zzz');
+//        return redirect()->action('test\testController@test15')->with('aaa','zzz');
+//        return redirect()->route("test155")->with('aaa','zzz');
+//        return redirect()->back();
+    }
+
+
+    /**
+     * middleware
+     */
+    public  functio
 
 
 
