@@ -32,20 +32,28 @@
     </div>
     <div class="panel-body">
     <div>
-        <form class="form-inline" role="form">
+        <form class="form-inline" role="form" action="/" method="post">
+            {{ csrf_field() }}
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">live名称</span>
-              <input type="text" class="form-control" placeholder="liveName" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">live关键字</span>
+              <input type="text" name="name" class="form-control" placeholder="liveName" aria-describedby="sizing-addon3">
             </div>            
 
             <div class="input-group input-group-sm">
               <span class="input-group-addon" id="sizing-addon3">live作者</span>
-              <input type="text" class="form-control" placeholder="liveAuthor" aria-describedby="sizing-addon3">
+              <input type="text"  name="author" class="form-control" placeholder="liveAuthor" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">live分类</span>
-              <input type="text" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
+                <span class="input-group-addon" id="sizing-addon3">live分类</span>
+                <input type="text"  name="cat" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
+            </div>
+
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <div class="input-group input-group-sm">
+                <input type="submit" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
             </div>
 
         </form>
@@ -106,7 +114,6 @@
 @section('page')
 @parent
 <ul class="pagination">
-
     @if($data['current_page'] != 1)
       <li><a href={{$data['prev_page_url']}} >上一页</a></li>
       <li><a href={{$data['path']}}?page=1 >第一页</a></li>
