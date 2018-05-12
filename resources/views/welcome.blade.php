@@ -78,17 +78,17 @@
             @endif
 
             <div class="content">
+                <h1>请选择您需要的内容</h1>
                 <div class="title m-b-md">
-                    {{$name}}
-                    {{$age }}
+                    <a href="/live"> <b> LIVE</b></a>  |   <a href = "/sijiake" >私家课</a>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="">友情链接1</a>
+                    <a href="">友情链接2</a>
+                    <a href="">友情链接3</a>
+                    <a href="">友情链接4</a>
+                    <a href="">友情链接5</a>
                 </div>
             </div>
         </div>

@@ -1,8 +1,6 @@
 @extends('zhihu.layout.layout')
 
-@section('title', 'live数据检索')
-
-
+@section('title', '私家课数据检索')
 
 @section('menu')
 @parent
@@ -64,12 +62,9 @@
    <thead>
      <tr>
        <th>id</th>
-       <th>live名称</th>
-       <th>live作者</th>
-       <th>参加人数</th>
-         <th>开始时间</span></th>
-       <th>分类</th>
-       <th>评分</th>
+       <th>私家课名称</th>
+       <th>作者</th>
+         <th>开始时间</th>
        <th>官方价格</th>
        <th>操作</th>
      </tr>

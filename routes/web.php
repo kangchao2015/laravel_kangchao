@@ -11,20 +11,26 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
 
 //路由关联控制器的两种方法
 //Route::get('/','Zhihu\ZhihuController@index');
 //Route::get('/',['uses'=>'Zhihu\ZhihuController@index']);
 //Route::any('/',['uses'=>'Zhihu\ZhihuController@index']);
-Route::match(['get', 'post'],'/',[
+Route::match(['get', 'post'],'/live',[
     'uses'=>'Zhihu\ZhihuController@index',
     'as'=> 'indexalias'
 ]);
 
+Route::match(['get', 'post'],'/sijiake',[
+    'uses'=>'Zhihu\sijiakeController@index',
+    'as'=> 'indexalias'
+]);
+
+Route::get("/admin","Zhihu\adminController@index");
 
 
 //通过路由给控制器传递参数
