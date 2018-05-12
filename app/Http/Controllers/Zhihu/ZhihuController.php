@@ -90,6 +90,11 @@ class ZhihuController extends Controller
 
         return view('zhihu.index',[
             'data' => $data,
+            'search' => [
+                'name' => $name,
+                'cat'   =>$cat,
+                'author' =>$author
+            ]
         ])->with('test',"kangchao");
     }
 }

@@ -70,7 +70,11 @@
 
 @section('data')
 @parent
-<div class="table-responsive" style = "margin: 10px">          
+<div class="table-responsive" style = "margin: 10px">
+当前查询条件为：
+    <div>LIVE名称：{{$search['name'] or '无'}}</div>
+    <div>Live分类：{{$search['cat'] or "无"}}</div>
+    <div>LIVE作者：{{$search['author'] or "无"}}</div>
  <table class="table table-striped table-bordered">
    <thead>
      <tr>
