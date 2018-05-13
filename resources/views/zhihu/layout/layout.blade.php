@@ -78,10 +78,9 @@
 @component('zhihu.common.show')
 @endcomponent
 
-{{--
+
 @component('zhihu.common.statics')
 @endcomponent
---}}
 
 
 

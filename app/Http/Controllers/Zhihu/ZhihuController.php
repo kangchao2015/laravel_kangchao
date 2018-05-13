@@ -67,9 +67,23 @@ class ZhihuController extends Controller
             $author = $req->input('author', null);
             $cat = $req->input('cat', null);
 
+            if($name != Session::get("name") || $author != Session::get("author") || $cat !=  Session::get("cat")){
+                DB::table('keywords')->insert(
+                    [
+                        'subject' => "$name",
+                        'author' => "$author",
+                        "category" => "$cat",
+                        "created_at" => time(),
+                        "remote_ip" =>$_SERVER['REMOTE_ADDR']
+                    ]
+                );
+            }
+
             $req->session()->put('name', $name);
             $req->session()->put('author', $author);
             $req->session()->put('cat', $cat);
+
+
 
         }
 
