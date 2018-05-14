@@ -15,11 +15,6 @@
      return view('welcome');
  });
 
-
-//路由关联控制器的两种方法
-//Route::get('/','Zhihu\ZhihuController@index');
-//Route::get('/',['uses'=>'Zhihu\ZhihuController@index']);
-//Route::any('/',['uses'=>'Zhihu\ZhihuController@index']);
 Route::match(['get', 'post'],'/live',[
     'uses'=>'Zhihu\ZhihuController@index',
     'as'=> 'indexalias'
@@ -31,6 +26,38 @@ Route::match(['get', 'post'],'/sijiake',[
 ]);
 
 Route::get("/admin","Zhihu\adminController@index");
+
+
+
+/*
+ * 登陆路由
+ */
+Route::get('auth/login', 'Auth\LoginController@getLogin');
+Route::post('auth/login', 'Auth\LoginController@postLogin');
+
+
+/*
+ * 登出路由
+ */
+Route::get('auth/logout', 'Auth\LoginController@getLogout');
+
+
+/*
+ * 用户注册
+ */
+Route::get('auth/register', 'Auth\RegisterController@create');
+Route::post('auth/register', 'Auth\RegisterController@create');
+
+
+
+
+
+
+/*-----------------以下为测试用的路由------------------------*/
+
+
+
+
 
 
 //通过路由给控制器传递参数

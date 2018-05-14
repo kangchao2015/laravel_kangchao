@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\live_info;
 use App\member;
 use Illuminate\Support\Facades\Session;
+use phpDocumentor\Reflection\DocBlock\Tags\See;
 
 
 class adminController extends Controller
@@ -29,7 +30,7 @@ class adminController extends Controller
 
 
         return view('zhihu.admin',[
-
+            "uname"=>Session::get("uname")
         ])->with('type',"admin");
     }
 }

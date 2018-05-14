@@ -45,7 +45,7 @@ class sijiakeController extends Controller
 
 
         $data_all = DB::table('live_info')
-            ->where('subject', 'like', "%$name%")
+            ->where('subject', 'like', "666666666666666%")
             ->where('tags_0_name', 'like', "%$cat%")
             ->where('speaker_member_name', 'like', "%$author%")
             ->orderBy('fee_original_price', 'desc')
@@ -54,9 +54,9 @@ class sijiakeController extends Controller
 
 //        $data_all  = DB::table("live_info")->paginate(15);
         $data = $this->objectToArray($data_all);
-
         return view('zhihu.sijiake',[
             'data' => $data,
+            'uname' => Session::get("uname"),
             'search' => [
                 'name' => $name,
                 'cat'   =>$cat,

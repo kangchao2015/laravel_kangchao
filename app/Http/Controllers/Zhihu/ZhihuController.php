@@ -105,6 +105,7 @@ class ZhihuController extends Controller
 
         return view('zhihu.index',[
             'data' => $data,
+            'uname' => Session::get("uname"),
             'search' => [
                 'name' => $name,
                 'cat'   =>$cat,

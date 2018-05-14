@@ -17,7 +17,7 @@
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">你的剑就是我的剑</a>
+                <a class="navbar-brand" href="/">你的剑就是我的剑</a>
             </div>
             <div>
                 <ul class="nav navbar-nav">
@@ -33,12 +33,19 @@
                         <li class=""><a href="/sijiake">私家课</a></li>
                     @endif
 
-                    @if($type == "admin")
-                        <li class="active"><a href="/admin">管理员登陆</a></li>
+                    @if( isset($uname) && $uname)
+                            <li class="active"><a href="/admin">欢迎:{{$uname}}</a></li>
+                            <li class="active"><a href="/auth/logout">退出登陆</a></li>
                     @else
-                        <li class=""><a href="/admin">管理员登陆1</a></li>
-                    @endif
 
+                        @if($type == "admin")
+                            <li class="active"><a href="/admin">管理员登陆1</a></li>
+                        @else
+                            <li class=""><a href="/admin">管理员登陆2</a></li>
+                        @endif
+
+
+                    @endif
 
 
                 </ul>

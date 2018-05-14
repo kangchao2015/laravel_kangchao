@@ -41,7 +41,7 @@
             &nbsp;
             &nbsp;
             <div class="input-group input-group-sm">
-                <input type="submit" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
+                <span> <input type="submit" class="form-control" aria-describedby="sizing-addon3"> </span>
             </div>
 
         </form>
