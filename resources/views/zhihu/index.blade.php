@@ -51,7 +51,8 @@
 
                 @foreach ($keywords as $k=>$v)
                     <span class="label label-primary">{{$v->subject}}</span>
-                @endforeach
+                @endforeach 于：
+                [{{$time}}]
             </h3>
             </p>
         </form>

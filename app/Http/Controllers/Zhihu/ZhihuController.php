@@ -107,14 +107,15 @@ class ZhihuController extends Controller
             ->orderby("created_at", "desc")
             ->get();
 
-//        dd($keywords_data);
-
+        $time = $keywords_data->first()->created_at;
+        $time = date("Y-m-d H:i:s", $time);
 //        $data_all  = DB::table("live_info")->paginate(15);
         $data = $this->objectToArray($data_all);
 
         return view('zhihu.index',[
             'data' => $data,
             "keywords" => $keywords_data,
+            "time" =>$time,
             'uname' => Session::get("uname"),
             'search' => [
                 'name' => $name,
