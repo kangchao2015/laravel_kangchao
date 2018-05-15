@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\live_info;
 use App\member;
 use Illuminate\Support\Facades\Session;
+use App\keywords;
 
 
 class ZhihuController extends Controller
@@ -99,12 +100,21 @@ class ZhihuController extends Controller
             ->orderBy('fee_original_price', 'desc')
             ->paginate(15);
 
+        $keywords_data = DB::table("keywords")
+            ->where("subject","<>", "")
+            ->offset(0)
+            ->limit(10)
+            ->orderby("created_at", "desc")
+            ->get();
+
+//        dd($keywords_data);
 
 //        $data_all  = DB::table("live_info")->paginate(15);
         $data = $this->objectToArray($data_all);
 
         return view('zhihu.index',[
             'data' => $data,
+            "keywords" => $keywords_data,
             'uname' => Session::get("uname"),
             'search' => [
                 'name' => $name,

@@ -22,6 +22,7 @@
     <div>
         <form class="form-inline" role="form" action="/live" method="post">
             {{ csrf_field() }}
+            <p>
             <div class="input-group input-group-sm">
               <span class="input-group-addon" id="sizing-addon3">live关键字</span>
               <input type="text" name="name" value="{{$search['name']}}" class="form-control" placeholder="liveName" aria-describedby="sizing-addon3">
@@ -43,7 +44,16 @@
             <div class="input-group input-group-sm">
                 <span> <input type="submit" class="form-control" aria-describedby="sizing-addon3"> </span>
             </div>
+            </p>
+            <p>
+<h3>
+                最近搜索过的关键词：
 
+                @foreach ($keywords as $k=>$v)
+                    <span class="label label-primary">{{$v->subject}}</span>
+                @endforeach
+            </h3>
+            </p>
         </form>
     </div>
     </div>
