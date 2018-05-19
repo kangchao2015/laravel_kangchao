@@ -34,7 +34,14 @@
             <div class="input-group input-group-sm">
                 <input type="submit" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
             </div>
+            <h3>
+                最近搜索过的关键词：
 
+                @foreach ($keywords as $k=>$v)
+                    <span class="label label-primary">{{$v->subject}}</span>
+                @endforeach 于：
+                [{{$time}}]
+            </h3>
         </form>
     </div>
     </div>

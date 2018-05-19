@@ -33,7 +33,7 @@ class ZhihuController extends Controller
 
 
 
-        $res = DB::select("select * from live_info limit 5");
+        $res = DB::select("select * from live_infos limit 5");
         dd($res);
 
 
@@ -75,7 +75,8 @@ class ZhihuController extends Controller
                         'author' => "$author",
                         "category" => "$cat",
                         "created_at" => time(),
-                        "remote_ip" =>$_SERVER['REMOTE_ADDR']
+                        "remote_ip" =>$_SERVER['REMOTE_ADDR'],
+                        "type" => 1
                     ]
                 );
             }
@@ -93,7 +94,7 @@ class ZhihuController extends Controller
         $author =  Session::get("author");
 
 
-        $data_all = DB::table('live_info')
+        $data_all = DB::table('live_infos')
             ->where('subject', 'like', "%$name%")
             ->where('tags_0_name', 'like', "%$cat%")
             ->where('speaker_member_name', 'like', "%$author%")
@@ -102,6 +103,7 @@ class ZhihuController extends Controller
 
         $keywords_data = DB::table("keywords")
             ->where("subject","<>", "")
+            ->whereIn ("type",[0,1])
             ->offset(0)
             ->limit(10)
             ->orderby("created_at", "desc")

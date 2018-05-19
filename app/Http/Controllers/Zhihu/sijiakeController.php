@@ -36,13 +36,36 @@ class sijiakeController extends Controller
             $name = $req->input('title', null);
             $author = $req->input('author', null);
 
+
+            if($name != Session::get("sname") || $author != Session::get("sauthor") ){
+                DB::table('keywords')->insert(
+                    [
+                        'subject' => "$name",
+                        'author' => "$author",
+                        "created_at" => time(),
+                        "remote_ip" =>$_SERVER['REMOTE_ADDR'],
+                        "type" => 2
+                    ]
+                );
+            }
+
             $req->session()->put('sname', $name);
             $req->session()->put('sauthor', $author);
+
+
 
         }
 
         $name =  Session::get("sname");
         $author =  Session::get("sauthor");
+
+        $keywords_data = DB::table("keywords")
+            ->where("subject","<>", "")
+            ->where ("type","=", 2)
+            ->offset(0)
+            ->limit(10)
+            ->orderby("created_at", "desc")
+            ->get();
 
 
         $data_all = DB::table('sijiake_infos')
@@ -50,12 +73,15 @@ class sijiakeController extends Controller
             ->where('author', 'like', "%$author%")
             ->paginate(15);
 
+        $time = $keywords_data->first()->created_at;
+        $time = date("Y-m-d H:i:s", $time);
 
-//        $data_all  = DB::table("live_info")->paginate(15);
         $data = $this->objectToArray($data_all);
         return view('zhihu.sijiake',[
             'data' => $data,
             'uname' => Session::get("uname"),
+            "time" => $time,
+            "keywords" =>$keywords_data,
             'search' => [
                 'name' => $name,
                 'author' =>$author
