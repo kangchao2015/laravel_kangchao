@@ -141,7 +141,7 @@
     // 在 `methods` 对象中定义方法
     methods: {
       showdetail:function (id) {
-        url = "{{ route('showdetail') }}";
+        url = "{{ route('showdetail_live') }}";
         url = url + "/" + id;
         axios.get(url)
           .then(function (response) {

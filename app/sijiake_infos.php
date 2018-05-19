@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class live_info extends Model
+class sijiake_infos extends Model
 {
     
     const CREATED_AT 		= 'creation_date';		//自定义用于存储时间戳的字段名CREATED_AT 
@@ -14,7 +14,7 @@ class live_info extends Model
 
 
     //指定模型关联的表名
-    protected $table 		= 'live_info';	//如果不指定 将会使用类的复数形式「蛇形命名」来作为表名
+    protected $table 		= 'sijiake_infos';	//如果不指定 将会使用类的复数形式「蛇形命名」来作为表名
 
     //指定主键
     protected $primaryKey 	= 'uuid';		//如果不指定 假定每个数据表都有一个名为 id 的主键字段

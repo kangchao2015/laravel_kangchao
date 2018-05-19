@@ -18,26 +18,19 @@
     </div>
     <div class="panel-body">
     <div>
-        <form class="form-inline" role="form" action="/live" method="post">
+        <form class="form-inline" role="form" action="/sijiake" method="post">
             {{ csrf_field() }}
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">live关键字</span>
-              <input type="text" name="name" value="{{$search['name']}}" class="form-control" placeholder="liveName" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">私家课关键字</span>
+              <input type="text" name="title" value="{{$search['name']}}" class="form-control" placeholder="liveName" aria-describedby="sizing-addon3">
             </div>            
 
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">live作者</span>
+              <span class="input-group-addon" id="sizing-addon3">私家课作者</span>
               <input type="text"  name="author" value="{{$search['author']}}" class="form-control" placeholder="liveAuthor" aria-describedby="sizing-addon3">
             </div>
 
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon" id="sizing-addon3">live分类</span>
-                <input type="text"  name="cat" value="{{$search['cat']}}" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
-            </div>
 
-            &nbsp;
-            &nbsp;
-            &nbsp;
             <div class="input-group input-group-sm">
                 <input type="submit" class="form-control" placeholder="liveCategory" aria-describedby="sizing-addon3">
             </div>
@@ -61,11 +54,11 @@
  <table class="table table-striped table-bordered">
    <thead>
      <tr>
-       <th>id</th>
+       <th>私家课id</th>
        <th>私家课名称</th>
        <th>作者</th>
-         <th>开始时间</th>
        <th>官方价格</th>
+         <th>状态</th>
        <th>操作</th>
      </tr>
    </thead>
@@ -75,16 +68,22 @@
     @foreach ($data['data'] as $k=>$v)
        <tr>
          <td>{{ $v['id'] }}</td>
-         <td>{{ $v['subject'] }}</td>
-         <td>{{ $v['speaker_member_name'] }}</td>
-         <td>{{ $v['seats_taken']}}人</td>
-         <td>{{ date('Y/m/d H:i',$v['starts_at'])}} </td>
-         <td>{{ $v['tags_0_name'] }}</td>
-         <td>{{ $v['feedback_score'] }}</td>
-         <td>￥{{ $v['fee_original_price']/100 }}</td>
+         <td>{{ $v['title'] }}</td>
+         <td>{{ $v['author'] }}</td>
+           <td>￥{{ $v['price']/100 }}</td>
+           @if($v["accessable"] == 0)
+            <td><span class="btn btn-danger">待开通..</span></td>
+           @elseif($v["accessable"] == 1)
+               <td><span class="btn btn-warning">已开通需联系客服</span></td>
+           @elseif($v["accessable"] == 2)
+               <td><span class="btn btn-success">已开通</span></td>
+           @else
+               <td><span class="btn btn-default">私家课状态异常</span></td>
+           @endif
+
          <td>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="showdetail('{{ $v['id'] }}')">详情</button>
-          <button type="button" class="btn btn-success">选择</button></td>
+           {{--<button type="button" class="btn btn-success">选择</button></td>--}}
        </tr>
     @endforeach
 
@@ -125,18 +124,18 @@
     // 在 `methods` 对象中定义方法
     methods: {
       showdetail:function (id) {
-        url = "{{ route('showdetail') }}";
+        url = "{{ route('showdetail_sijiake') }}";
         url = url + "/" + id;
         axios.get(url)
           .then(function (response) {
             if(response.data.code == 200){
               data = response.data.data;
               console.log(data);
-              $("#myModalLabel").text(data.subject);
-              $("#c1").html(data.outline);
-              $("#c2").text(data.description);
-              $("#c3").text(data.speaker_description);
-              $("#c4").text(data.speaker_member_headline);
+              $("#myModalLabel").text(data.title);
+              $("#c1").html("<h2>适合人群：</h2>\r\n"+data.sut_people);
+              $("#c2").text(data.keypoint);
+              $("#c3").text(data.bio);
+              $("#c4").text(data.career);
             }else{
 
             }

@@ -12,12 +12,12 @@
 				</h4>
 			</div>
 			<div class="modal-body">
-				<span><h4>live提纲</h4></span>
+				<span><h4>提纲</h4></span>
 				<pre>
 					<div id = "c1"></div>
 					</pre>
 					<br>
-				<span><h4>live描述</h4></span>
+				<span><h4>描述</h4></span>
 
 					<div id = "c2"></div>
 					<br>

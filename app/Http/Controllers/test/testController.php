@@ -4,7 +4,7 @@ namespace App\Http\Controllers\test;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\live_info;
+use App\sijiakeinfos;
 use App\live_infos;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
@@ -18,7 +18,7 @@ class testController extends Controller
 
 	//默认情况下，Eloquent 查询的结果返回的内容都是 Collection 实例。
     public function test1(){
-        $data = live_info::all();
+        $data = sijiakeinfos::all();
         $data = $data->reject(function($d){
             return $d->feedback_score != 5.0;
         })->map(function($d){
@@ -66,8 +66,8 @@ class testController extends Controller
     }
 
     public function test4(){
-		$data = live_info::all();
-		live_info::chunk(200, function($d){
+		$data = sijiakeinfos::all();
+		sijiakeinfos::chunk(200, function($d){
 			foreach ($d as $key => $value) {
 				# code...
 				echo $key."-->".$value;
@@ -234,26 +234,26 @@ class testController extends Controller
     public function test8(){
 
         //all 表的所有记录
-        $res = live_info::all();
+        $res = sijiakeinfos::all();
 
         //如果没有当前这条数据的话会返回空
-        $res = live_info::find("60113");  //根据主键查找
+        $res = sijiakeinfos::find("60113");  //根据主键查找
 
         //如果没有当前这条数据会返回 错误 根据主键查找
-        $res = live_info::findorfail("603");
+        $res = sijiakeinfos::findorfail("603");
 
-        $res = live_info::get();
-        $res = live_info::where("id",">","600")->first();
+        $res = sijiakeinfos::get();
+        $res = sijiakeinfos::where("id",">","600")->first();
 
         //chunk
-        $res = live_info::chunk(400,function($res1){
+        $res = sijiakeinfos::chunk(400,function($res1){
             echo 123 . "<br>";
         });
 
-        $res = live_info::count();
-        $res = live_info::max("uuid");
-        $res = live_info::min("uuid");
-        $res = live_info::sum("uuid");
+        $res = sijiakeinfos::count();
+        $res = sijiakeinfos::max("uuid");
+        $res = sijiakeinfos::min("uuid");
+        $res = sijiakeinfos::sum("uuid");
 
 
         dd($res);

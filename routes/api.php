@@ -18,4 +18,5 @@ use Illuminate\Http\Request;
 // });
 
 
-Route::get('/live/{id?}','Zhihu\ZhihuController@api_get_specific_live')->name("showdetail");
+Route::get('/live/{id?}','Zhihu\ZhihuController@api_get_specific_live')->name("showdetail_live");
+Route::get('/sijiake/{id?}','Zhihu\sijiakeController@api_get_specific_sijiake')->name("showdetail_sijiake");

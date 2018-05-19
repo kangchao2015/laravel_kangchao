@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
-use App\live_info;
+use App\sijiakeinfos;
 
 class UserController extends Controller
 {
@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function show($id = 0)
     {
-        $flights = live_info::all();
+        $flights = sijiakeinfos::all();
 
         foreach ($flights as $flight) {
             echo $flight->name;

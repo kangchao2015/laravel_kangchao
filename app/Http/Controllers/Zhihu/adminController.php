@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Zhihu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\live_info;
+use App\sijiakeinfos;
 use App\member;
 use Illuminate\Support\Facades\Session;
 use phpDocumentor\Reflection\DocBlock\Tags\See;

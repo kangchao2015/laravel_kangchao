@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Zhihu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\live_info;
+use App\live_infos;
 use App\member;
 use Illuminate\Support\Facades\Session;
 use App\keywords;
@@ -21,7 +21,7 @@ class ZhihuController extends Controller
 	}
 
     public function api_get_specific_live($live_id){
-        $data = live_info::where("id",$live_id)->first();
+        $data = live_infos::where("id",$live_id)->first();
         return $data?["data"=>$data,"code"=>200]:["code"=>404];
     }
 
