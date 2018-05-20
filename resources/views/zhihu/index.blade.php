@@ -82,7 +82,8 @@
        <th>分类</th>
        <th>评分</th>
        <th>官方价格</th>
-       <th>操作</th>
+         <th>当前状态</th>
+         <th>操作</th>
      </tr>
    </thead>
    <tbody  id = "action">
@@ -98,9 +99,17 @@
          <td>{{ $v['tags_0_name'] }}</td>
          <td>{{ $v['feedback_score'] }}</td>
          <td>￥{{ $v['fee_original_price']/100 }}</td>
+           @if($v["accessable"] == 0)
+               <td><span class="btn btn-danger">待开通..</span></td>
+           @elseif($v["accessable"] == 1)
+               <td><span class="btn btn-warning">已开通需联系客服</span></td>
+           @elseif($v["accessable"] == 2)
+               <td><span class="btn btn-success">已开通</span></td>
+           @else
+               <td><span class="btn btn-default">私家课状态异常</span></td>
+           @endif
          <td>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="showdetail('{{ $v['id'] }}')">详情</button>
-          <button type="button" class="btn btn-success">选择</button></td>
        </tr>
     @endforeach
 
