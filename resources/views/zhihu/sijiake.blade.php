@@ -91,6 +91,9 @@
          <td>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="showdetail('{{ $v['id'] }}')">详情</button>
            {{--<button type="button" class="btn btn-success">选择</button></td>--}}
+             @if($uname !== null)
+                 <span class="btn btn-danger">编辑</span>
+           @endif
        </tr>
     @endforeach
 
