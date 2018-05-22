@@ -98,7 +98,7 @@ class ZhihuController extends Controller
             ->where('subject', 'like', "%$name%")
             ->where('tags_0_name', 'like', "%$cat%")
             ->where('speaker_member_name', 'like', "%$author%")
-            ->orderBy('id', 'desc')
+            ->orderBy('accessable', 'desc')
             ->paginate(15);
 
         $keywords_data = DB::table("keywords")

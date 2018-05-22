@@ -71,6 +71,7 @@ class sijiakeController extends Controller
         $data_all = DB::table('sijiake_infos')
             ->where('title', 'like', "%$name%")
             ->where('author', 'like', "%$author%")
+            ->orderby("accessable", "desc")
             ->paginate(15);
 
         $time = $keywords_data->first()->created_at;
